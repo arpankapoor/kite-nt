@@ -1,0 +1,7 @@
+[default.extend-words]
+# Exchange code.
+BSE = "BSE"
+# Prefix used by Indian securities identifiers in fixtures and documentation.
+INE = "INE"
+# Kite's Margin Intraday Squareoff product code.
+MIS = "MIS"

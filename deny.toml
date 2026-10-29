@@ -1,0 +1,43 @@
+[graph]
+# Include the optional high-precision integration in every dependency audit.
+all-features = true
+
+[licenses]
+allow = [
+  "Apache-2.0",
+  "Apache-2.0 WITH LLVM-exception",
+  "BSD-2-Clause-Patent",
+  "BSD-3-Clause",
+  "CC0-1.0",
+  "CDLA-Permissive-2.0",
+  "ISC",
+  "LGPL-3.0-only",
+  "MIT",
+  "Unicode-3.0",
+  "Zlib",
+]
+
+[[licenses.clarify]]
+# implied-vol ships a license file but no machine-readable license expression.
+crate = "implied-vol"
+expression = "MIT"
+license-files = [{ path = "LICENSE", hash = 0x526ab6d5 }]
+
+[bans]
+multiple-versions = "deny"
+skip = [
+  # These duplicate versions are imposed by Nautilus's transitive dependencies.
+  { crate = "darling@0.20", reason = "Required by derive-builder" },
+  { crate = "darling_core@0.20", reason = "Required by derive-builder" },
+  { crate = "darling_macro@0.20", reason = "Required by derive-builder" },
+  { crate = "getrandom@0.2", reason = "Required by rand 0.8" },
+  { crate = "getrandom@0.3", reason = "Required by rand 0.9 and ahash" },
+  { crate = "hashbrown@0.14", reason = "Required by dashmap" },
+  { crate = "lock_api@0.4", reason = "Required by transitive dependencies" },
+  { crate = "parking_lot@0.12", reason = "Required by transitive dependencies" },
+  { crate = "parking_lot_core@0.9", reason = "Required by parking_lot 0.12" },
+  { crate = "r-efi@5", reason = "Required by getrandom 0.3" },
+  { crate = "redox_syscall@0.5", reason = "Required by parking_lot_core 0.9" },
+  { crate = "syn@2", reason = "Required by procedural macros" },
+  { crate = "webpki-roots@0.26", reason = "Required by tokio-tungstenite" },
+]

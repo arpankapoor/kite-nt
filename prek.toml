@@ -1,0 +1,58 @@
+# Configuration file for `prek`, a git hook framework written in Rust.
+# See https://prek.j178.dev for more information.
+#:schema https://www.schemastore.org/prek.json
+
+[[repos]]
+repo = "builtin"
+hooks = [
+  { id = "check-added-large-files" },
+  { id = "check-case-conflict" },
+  { id = "check-json" },
+  { id = "check-merge-conflict" },
+  { id = "check-symlinks" },
+  { id = "check-toml" },
+  { id = "check-vcs-permalinks" },
+  { id = "check-yaml" },
+  { id = "destroyed-symlinks" },
+  { id = "detect-private-key" },
+  { id = "end-of-file-fixer" },
+  { id = "fix-byte-order-marker" },
+  { id = "forbid-new-submodules" },
+  { id = "mixed-line-ending" },
+  { id = "trailing-whitespace" },
+]
+
+[[repos]]
+repo = "https://github.com/ComPWA/taplo-pre-commit"
+rev = "v0.9.3"
+hooks = [{ id = "taplo-format" }]
+
+[[repos]]
+repo = "https://github.com/crate-ci/typos"
+rev = "v1.51.1"
+hooks = [{ id = "typos" }]
+
+[[repos]]
+repo = "https://github.com/DavidAnson/markdownlint-cli2"
+rev = "v0.24.0"
+hooks = [{ id = "markdownlint-cli2" }]
+
+[[repos]]
+repo = "https://github.com/FeryET/pre-commit-rust"
+rev = "v1.2.1"
+hooks = [{ id = "fmt" }, { id = "clippy" }, { id = "test" }]
+
+[[repos]]
+repo = "https://github.com/DevinR528/cargo-sort"
+rev = "v2.1.4"
+hooks = [{ id = "cargo-sort", args = ["--grouped", "--no-format"] }]
+
+[[repos]]
+repo = "https://github.com/bnjbvr/cargo-machete"
+rev = "v0.9.2"
+hooks = [{ id = "cargo-machete" }]
+
+[[repos]]
+repo = "https://github.com/EmbarkStudios/cargo-deny"
+rev = "0.20.2"
+hooks = [{ id = "cargo-deny", args = ["check"] }]
