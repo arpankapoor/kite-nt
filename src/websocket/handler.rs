@@ -259,6 +259,8 @@ impl KiteWsFeedHandler {
             }
             KiteWsMessage::Message(message) => {
                 tracing::info!(kitemsg = %message, "Kite WebSocket message");
+                self.send_execution(KiteWsExecutionEvent::Message(message))
+                    .await;
             }
             KiteWsMessage::InstrumentsMeta { etag, count } => {
                 tracing::debug!(%etag, count, "Received Kite instruments metadata");

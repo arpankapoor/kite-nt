@@ -1119,6 +1119,7 @@ async fn run_ws_stream(
                 )
                 .await;
             }
+            KiteWsExecutionEvent::Message(_) => {}
             KiteWsExecutionEvent::Reconnected => {
                 tracing::info!("Kite execution WebSocket reconnected");
             }

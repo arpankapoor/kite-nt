@@ -168,6 +168,8 @@ pub enum KiteWsExecutionEvent {
         /// Time at which the WebSocket frame was received.
         ts_init: UnixNanos,
     },
+    /// Broker message or alert.
+    Message(String),
     /// The WebSocket transport reconnected.
     Reconnected,
 }
