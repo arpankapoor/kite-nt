@@ -9,3 +9,7 @@ docs:
 
 clean:
     cargo clean
+
+# Create a local release commit and annotated tag.
+release version="minor":
+    ./scripts/release.sh "{{ version }}"

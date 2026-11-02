@@ -38,6 +38,16 @@ rev = "v0.24.0"
 hooks = [{ id = "markdownlint-cli2" }]
 
 [[repos]]
+repo = "https://github.com/koalaman/shellcheck-precommit"
+rev = "v0.11.0"
+hooks = [{ id = "shellcheck" }]
+
+[[repos]]
+repo = "https://github.com/scop/pre-commit-shfmt"
+rev = "v3.14.1-1"
+hooks = [{ id = "shfmt", args = ["-i", "2", "-ci", "-sr", "-ln", "bash", "-w"] }]
+
+[[repos]]
 repo = "https://github.com/FeryET/pre-commit-rust"
 rev = "v1.2.1"
 hooks = [{ id = "fmt" }, { id = "clippy" }, { id = "test" }]
